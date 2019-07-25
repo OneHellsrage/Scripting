@@ -4,34 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp3
 {
-    class Program
+    class EjemploIF2
     {
         static void Main()
         {
             // Variables
-            Console.WriteLine("Ingrese el valor identificado como Z: ");
-            double Z = double.Parse(Console.ReadLine());
-            Console.WriteLine("Ingrese el valor identificado como Y: ");
-            double Y = double.Parse(Console.ReadLine());
-            Console.WriteLine("Ingrese el valor identificado como b: ");
-            double bG = double.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese el coeficiente A: ");
+            double A = double.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese el coeficiente B: ");
+            double B = double.Parse(Console.ReadLine());
+            Console.WriteLine("ingrese el coeficiente C: ");
+            double C = double.Parse(Console.ReadLine());
 
-            // Ecuaciones
-            double T = Math.Sqrt(Z * Z + Y * Y);
-            double b = bG * (Math.PI / 180);
-            double c = Math.Asin(Z / T);
-            double cG = c * (180 / Math.PI);
-            double eG = 180 - cG;
-            double dG = 180 - bG - eG;
-            double d = dG * (Math.PI / 180);
-            double X = ((T * (Math.Sin(b)) / Math.Sin(d)));
+            // Operaciones
 
 
-            // Salida
+            double disc = Math.Pow(B, 2) - 4 * A * C;
 
-            Console.WriteLine(" X = " + X);
+
+            // Condicionales.
+
+            if (disc == 0)
+            {
+                double X1 = (-B ) / 2 * A;
+                Console.WriteLine(X1);
+                Console.WriteLine("Solo existe un posible resultado y es único");
+
+            } else if (disc > 0)
+            {
+                double X1 = (-B - Math.Sqrt(disc)) / 2 * A;
+                double X2 = (-B + Math.Sqrt(disc)) / 2 * A;
+                Console.WriteLine(X1);
+                Console.WriteLine(X2);
+                Console.WriteLine("Existen dos posibles soluciones");
+            }
+            else {
+                Console.WriteLine("Esa wea no da un número real");
+}        
+
         }
     }
 }

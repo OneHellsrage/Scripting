@@ -21,8 +21,8 @@ namespace ConsoleApp2
             int MIN = 828116;
             double bc = s * 0.4;
             //calculos 
-            if (bc < MIN) { 
-                bc = MIN}
+            if (bc < MIN) bc = min;
+           
             if (cont == 1)
                 {
                     double pension = bc * 0.04;

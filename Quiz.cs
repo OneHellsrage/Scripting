@@ -21,7 +21,8 @@ namespace ConsoleApp2
             int MIN = 828116;
             double bc = s * 0.4;
             //calculos 
-            if (bc < MIN) { bc = MIN;
+            if (bc < MIN) { 
+                bc = MIN}
             if (cont == 1)
                 {
                     double pension = bc * 0.04;
@@ -69,53 +70,5 @@ namespace ConsoleApp2
 
                 } 
 
-            } else
-                if (cont == 1)
-            {
-                double pension = bc * 0.04;
-                double eps = bc * 0.04;
-                double deduccionA = (pension + eps) * 12;
-                double salariof = ((s * 12) - deduccionA) + s;
-                Console.WriteLine("Su salario anual con deducciones y bonificación: " + salariof);
-            }
-            else
-            {
-                int arl = riesgo;
-                double pension = bc * 0.16;
-                double eps = bc * 0.125;
-
-                if (arl == 1)
-                {
-                    double deduccionA = (pension + eps + (bc * 0.00522) * 12);
-                    double salariof = ((s * 12) - deduccionA);
-                    Console.WriteLine("su salario anual con deducciones es: " + salariof);
-                }
-                else if (arl == 2)
-                {
-                    double deduccionA = (pension + eps + (bc * 0.01044) * 12);
-                    double salariof = ((s * 12) - deduccionA);
-                    Console.WriteLine("su salario anual con deducciones es: " + salariof);
-                }
-                else if (arl == 3)
-                {
-                    double deduccionA = (pension + eps + (bc * 0.02436) * 12);
-                    double salariof = ((s * 12) - deduccionA);
-                    Console.WriteLine("su salario anual con deducciones es: " + salariof);
-                }
-                else if (arl == 4)
-                {
-                    double deduccionA = (pension + eps + (bc * 0.0435) * 12);
-                    double salariof = ((s * 12) - deduccionA);
-                    Console.WriteLine("su salario anual con deducciones es: " + salariof);
-                }
-                else
-                {
-                    double deduccionA = (pension + eps + (bc * 0.0696) * 12);
-                    double salariof = ((s * 12) - deduccionA);
-                    Console.WriteLine("su salario anual con deducciones es: " + salariof);
-                }
-
-            }
-        }
     }
 }

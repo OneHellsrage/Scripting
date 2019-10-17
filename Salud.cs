@@ -4,24 +4,39 @@ using UnityEngine;
 
 public class Salud : MonoBehaviour
 {
-    public int bida = 3;
-    float t = 1.5f;
-    // Update is called once per frame
+    public int bida = 100;
+    float t = 1.5f, C = 0;
+    bool A = true;
+    Renderer Mcuerpo;
+    private void Awake()
+    {
+        Mcuerpo = GetComponent<Renderer>();
+    }
     void Update()
     {
-      t += Time.deltaTime;
-      if (bida <=0)
+        if (C > 5) A = true;
+        t += Time.deltaTime;
+        C += Time.deltaTime;
+        if (bida <=0)
         {
             Destroy(gameObject);
         }
     }
+    public void Estrellita()
+    {
+        C = 0;
+        A = false;
+    }  
     public void recibir_daño(int daño)
     {
-        if (t >= 1.5)
-        {
+        if (t >= 1.5 && A == true)
+        {           
             bida -= daño;
-            Debug.Log(bida);
-            t = 0;
+            t = 0;            
         }
     }
+    public void curarse()
+    {
+        bida += 10;
+    }    
 }
